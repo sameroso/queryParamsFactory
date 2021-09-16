@@ -1,6 +1,6 @@
 {
   "name": "urlsearchparamsfactory",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A helper factory function to work with query params on front end",
   "main": "js/index.js",
   "scripts": {
