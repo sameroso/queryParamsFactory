@@ -1,5 +1,5 @@
 
-# Url Search Params
+# Url Search Params Factory
 
 A helper function to deal with url search params on front end
 
