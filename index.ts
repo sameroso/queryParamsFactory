@@ -303,7 +303,7 @@ export class urlSearchParamsHelper<
    *  const urlSearchParamsWithAddedParam = urlSearchParamsHelper
    *  .create('?key1=value1')
    *  .addParam({ key:"key2", value:"value2"})
-   *  .getUrlSearchParams()
+   *  .urlSearchParamsString
    *
    *
    *  console.log(urlSearchParamsWithAddedParam) => "key1=value1&key2=value2"
@@ -313,7 +313,7 @@ export class urlSearchParamsHelper<
    *   const urlSearchParamsWithAddedParam = urlSearchParamsHelper
    *  .create<{ key1:string ,key2?: string }>('?key1=value1')
    *  .addParam({ key:"key2", value:"value2"})
-   *  .getUrlSearchParams()
+   *  .urlSearchParamsString
    *
    *
    *  console.log(urlSearchParamsWithAddedParam) => "key1=value1&key2=value2"
@@ -341,7 +341,7 @@ export class urlSearchParamsHelper<
    *  const urlSearchParamsWithAddedParamList = urlSearchParamsHelper
    * .create('?key1=value1')
    * .addParamList([{ key:"key2", value:"value2"},{ key:"key3", value:"value3"}])
-   * ..getUrlSearchParams()
+   * .urlSearchParamsString
    *
    *  console.log(urlSearchParamsWithAddedParamList) => "key1=value1&key2=value2&key3=value3"
    *
@@ -350,7 +350,7 @@ export class urlSearchParamsHelper<
    *  const urlSearchParamsWithAddedParamList = urlSearchParamsHelper
    * .create<{ key1:string, key2?: string, key3:string  }>('?key1=value1')
    * .addParamList([{ key:"key2", value:"value2"},{ key:"key3", value:"value3"}])
-   * .getUrlSearchParams()
+   * .urlSearchParamsString
    *
    *  console.log(urlSearchParamsWithAddedParamList) => "key1=value1&key2=value2&key3=value3"
    */
@@ -374,7 +374,7 @@ export class urlSearchParamsHelper<
    *  const urlSearchParamsWithRemovedParam = urlSearchParamsHelper
    * .create('?key1=value1&key2=value2&key3=value3&key4=value4')
    * .removeParam("key2")
-   * .getUrlSearchParams()
+   * .urlSearchParamsString
    *
    *  console.log(urlSearchParamsWithRemovedParam) => "key1=value1&key3=value3&key4=value4"
    *
@@ -383,7 +383,7 @@ export class urlSearchParamsHelper<
    * const urlSearchParamsWithRemovedParam = urlSearchParamsHelper
    * .create<{ key1:string key2?string, key3:string, key4:string }>('?key1=value1&key2=value2&key3=value3&key4=value4')
    * .removeParam("key2")
-   * .getUrlSearchParams()
+   * .urlSearchParamsString
    *
    *  console.log(urlSearchParamsWithRemovedParam) => "key1=value1&key3=value3&key4=value4"
    *
@@ -405,7 +405,7 @@ export class urlSearchParamsHelper<
    *  const urlSearchParamsWithRemovedParamList = urlSearchParamsHelper
    *  .create('?key1=value1&key2=value2&key3=value3&key4=value4')
    *  .removeParamList(["key2", "key3"])
-   *  .getUrlSearchParams()
+   *  .urlSearchParamsString
    *
    *  console.log(urlSearchParamsWithRemovedParamList) => "key1=value1&key4=value4"
    *
@@ -414,7 +414,7 @@ export class urlSearchParamsHelper<
    *  const urlSearchParamsWithRemovedParamList = urlSearchParamsHelper
    *  .create<{ key1:string key2?string, key3?:string, key4?:string }>('?key1=value1&key2=value2&key3=value3&key4=value4')
    *  .removeParamList(["key2", "key3"])
-   *  .getUrlSearchParams()
+   *  .urlSearchParamsString
    *
    *  console.log(urlSearchParamsWithRemovedParamList) => "key1=value1&key4=value4"
    *
@@ -439,7 +439,7 @@ export class urlSearchParamsHelper<
    *  const urlSearchParamsWithAddedOrReplacedParam = urlSearchParamsHelper
    * .create('?key1=value1&key2=value2')
    * .addOrReplaceParam({key:"key2", value:"replacedValue2"})
-   * .getUrlSearchParams()
+   * .urlSearchParamsString
    *
    *  console.log(urlSearchParamsWithAddedOrReplacedParam) => "key1=value1&key2=replacedValue2"
    *
@@ -448,7 +448,7 @@ export class urlSearchParamsHelper<
    * const urlSearchParamsWithAddedOrReplacedParam = urlSearchParamsHelper
    * .create<{ key1:string, key2:string }>('?key1=value1&key2=value2')
    * .addOrReplaceParam({key:"key2", value:"replacedValue2"})
-   * .getUrlSearchParams()
+   * .urlSearchParamsString
    *
    *  console.log(urlSearchParamsWithAddedOrReplacedParam) => "key1=value1&key2=replacedValue2"
    */
@@ -475,7 +475,7 @@ export class urlSearchParamsHelper<
    *  const urlSearchParamWithAddedAndReplacedParam = urlSearchParamsHelper
    *  .create('?key1=value1&key2=value2')
    *  .addOrReplaceParamList([{key:"key2", value:"replacedValue2"},{key:"key3", value:"addedValue3"}])
-   *  .getUrlSearchParams()
+   *  .urlSearchParamsString
    *
    *
    *  console.log(urlSearchParamWithAddedAndReplacedParam) => "key1=value1&key2=replacedValue2&key3=addedValue3"
@@ -485,7 +485,7 @@ export class urlSearchParamsHelper<
    *  const urlSearchParamWithAddedAndReplacedParam = urlSearchParamsHelper
    *  .create<{ key1:string, key2:string, key3:string }>('?key1=value1&key2=value2')
    *  .addOrReplaceParamList([{key:"key2", value:"replacedValue2"},{key:"key3", value:"addedValue3"}])
-   *  .getUrlSearchParams()
+   *  .urlSearchParamsString
    *
    *
    *  console.log(urlSearchParamWithAddedAndReplacedParam) => "key1=value1&key2=replacedValue2&key3=addedValue3"
@@ -566,7 +566,7 @@ export class urlSearchParamsHelper<
    *  @example
    *  const params = urlSearchParamsHelper
    *  .create('?key1=value1&key2=value2&key3=value3')
-   *  .getAllParams()
+   *  .allParams
    *
    *  console.log(params) => { key1:"value1", key2:"value2", key3:"value3" };
    *
@@ -574,13 +574,13 @@ export class urlSearchParamsHelper<
    *
    * const params = urlSearchParamsHelper
    *  .create<{ key1:string, key2:string, key3:string }>('?key1=value1&key2=value2&key3=value3')
-   *  .getAllParams()
+   *  .allParams
    *
    *  console.log(params) => { key1:"value1", key2:"value2", key3:"value3" };
    *
    */
 
-  getAllParams(): Record<keyof T, string> | Record<string, never> {
+  get allParams(): Record<keyof T, string> | Record<string, never> {
     const entries = this.urlSearchParams.entries();
     let entriesValues = entries.next();
     let params: Record<string, string> = !entriesValues.done
@@ -602,7 +602,7 @@ export class urlSearchParamsHelper<
    * @example
    *  const queryParamUrl = urlSearchParamsHelper
    *  .create('?key1=value1&key2=value2&key3=value3')
-   *  .getQueryParamUrl()
+   *  .urlSearchParamsString
    *
    *
    *  console.log(queryParamUrl) => "key1=value1&key2=value2&key3=value3";
@@ -611,13 +611,13 @@ export class urlSearchParamsHelper<
    *
    *  const queryParamUrl = urlSearchParamsHelper
    *  .create<{ key1:string, key2:string, key3:string }>('?key1=value1&key2=value2&key3=value3')
-   *  .getQueryParamUrl()
+   *  .urlSearchParamsString
    *
    *
    *  console.log(queryParamUrl) => "key1=value1&key2=value2&key3=value3";
    *
    */
-  getUrlSearchParams(): string {
+  get urlSearchParamsString(): string {
     return this.urlSearchParams.toString();
   }
 }
